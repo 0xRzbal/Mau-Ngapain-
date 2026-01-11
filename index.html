@@ -26,16 +26,15 @@
         font-size: 3rem;
         font-weight: bold;
         text-shadow: 2px 2px 6px rgba(0,0,0,.6);
-        margin: 5px 0;
+        margin: 6px 0;
         text-align: center;
     }
 
-    .hint {
+    .text {
         color: white;
-        font-size: 3rem;        /* sama dengan h1 */
-        font-weight: bold;      /* tebal */
+        font-size: 3rem;       /* sama ukuran dengan h1 */
+        font-weight: bold;
         text-shadow: 2px 2px 6px rgba(0,0,0,.6);
-        animation: blink 1.5s infinite;
         text-align: center;
     }
 
@@ -44,17 +43,12 @@
         50% { background-position: 100% 50%; }
         100% { background-position: 0% 50%; }
     }
-
-    @keyframes blink {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0.4; }
-    }
 </style>
 </head>
 <body onclick="startMusic()">
 
 <h1>Mau Ngapain?</h1>
-<div class="hint" id="hint">klik klik dimana saja untuk play</div>
+<div class="text">klik klik dimana saja untuk play</div>
 
 <div id="player"></div>
 
@@ -65,8 +59,6 @@
     function startMusic() {
         if (started) return;
         started = true;
-
-        document.getElementById('hint').style.display = 'none';
 
         player = new YT.Player('player', {
             height: '0',
